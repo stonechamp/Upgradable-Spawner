@@ -39,7 +39,7 @@ public class GUI {
         inv.setItem(0, createGuiItem( ChatColor.AQUA + "Spawner Stats", new ArrayList<String>(Arrays.asList(ChatColor.YELLOW + "Level:"+ ChatColor.WHITE + " 1", ChatColor.YELLOW + "Mobs Spawned: " + ChatColor.WHITE + "3")), Material.MOB_SPAWNER));
         inv.setItem(4, createGuiItem(ChatColor.AQUA + "Upgrade", new ArrayList<String>(Arrays.asList(ChatColor.YELLOW +"Cost:" + ChatColor.WHITE + " 250k", ChatColor.YELLOW + "About:" + ChatColor.WHITE + " +1 Mob Spawned")), Material.EMERALD));
         inv.setItem(8, createGuiItem(ChatColor.AQUA + "Next Level", new ArrayList<String>(Arrays.asList(ChatColor.YELLOW +"Level:" + ChatColor.WHITE +" 2",ChatColor.YELLOW + "Mobs Per Spawn:"+ ChatColor.WHITE +" - 4" )), Material.BOOK));
-        inv.setItem(13, createGuiItem(ChatColor.YELLOW + "Close GUI", new ArrayList<String>(Arrays.asList("")), Material.ANVIL)); 
+        inv.setItem(13, createGuiItem(ChatColor.YELLOW + "Close GUI", new ArrayList<String>(Arrays.asList()), Material.ANVIL)); 
         
         lvl2inv.setItem(0, createGuiItem(ChatColor.AQUA + "Spawner Stats", new ArrayList<String>(Arrays.asList(ChatColor.YELLOW +"Level:"+ ChatColor.WHITE +" 2", ChatColor.YELLOW + "Mobs Spawned:"+ ChatColor.WHITE +" 4")), Material.MOB_SPAWNER));
         lvl2inv.setItem(4, createGuiItem(ChatColor.AQUA + "Upgrade", new ArrayList<String>(Arrays.asList(ChatColor.YELLOW +"Cost:"+ ChatColor.WHITE +" 250k", ChatColor.YELLOW + "About:"+ ChatColor.WHITE +" +1 Mob Spawned")), Material.EMERALD));

@@ -3,6 +3,8 @@ package me.champ.spawners;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.candc.SilkSpawners;
+import de.candc.api.SilkSpawnersAPI;
 import me.champ.spawners.listeners.ClickListeners;
 import me.champ.spawners.listeners.OnSpawnerPlaceAndBreak;
 import me.champ.spawners.listeners.SpawnerSpawnListener;
@@ -16,6 +18,7 @@ public class Main extends JavaPlugin {
 	
 	public void onEnable() {
 		plugin = this;
+		
 		upgradeMenu = new GUI();
 		
 		this.registerEvents();

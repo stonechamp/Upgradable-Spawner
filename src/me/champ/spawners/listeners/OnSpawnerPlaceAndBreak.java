@@ -5,8 +5,11 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,6 +20,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.util.BlockIterator;
 
+import de.candc.SilkSpawners;
+import de.candc.api.SilkSpawnersAPI;
 import me.champ.spawners.Main;
 import net.minecraft.server.v1_8_R1.BlockPosition;
 
@@ -70,20 +75,30 @@ public class OnSpawnerPlaceAndBreak implements Listener {
 		ItemStack itemInHand = player.getItemInHand();
 		if (block.getType() == Material.MOB_SPAWNER) {
 			Enchantment silkTouch = new EnchantmentWrapper(33);
+			BlockState mobSpawner = block.getState();
+			CreatureSpawner cspawner = ((CreatureSpawner) mobSpawner);
+			EntityType ent = cspawner.getCreatureType().toEntityType();
+			
+			
+			
+			SilkSpawnersAPI api = SilkSpawners.getApi();
+			
 			if (itemInHand.containsEnchantment(silkTouch)){
 				if (block.hasMetadata("Level One")) {
 					event.setCancelled(true);
 					block.setType(Material.AIR);
-					ItemStack spawner = new ItemStack(Material.MOB_SPAWNER);
+					System.out.println(ent);
+					ItemStack spawner = api.getSpawner(ent);
 					ItemMeta meta = spawner.getItemMeta();
+					meta.getLore().clear();
 					meta.setDisplayName(ChatColor.GOLD + "[Spawner] Level 1");
 					spawner.setItemMeta(meta);
-					
 					block.getWorld().dropItemNaturally(event.getBlock().getLocation(), new ItemStack(spawner));
+					
 				}else if (block.hasMetadata("Level Two")) {
 					event.setCancelled(true);
 					block.setType(Material.AIR);
-					ItemStack spawner = new ItemStack(Material.MOB_SPAWNER);
+					ItemStack spawner = api.getSpawner(ent);
 					ItemMeta meta = spawner.getItemMeta();
 					meta.setDisplayName(ChatColor.GOLD + "[Spawner] Level 2");
 					spawner.setItemMeta(meta);
@@ -92,7 +107,7 @@ public class OnSpawnerPlaceAndBreak implements Listener {
 				} else if (block.hasMetadata("Level Three")) {
 					event.setCancelled(true);
 					block.setType(Material.AIR);
-					ItemStack spawner = new ItemStack(Material.MOB_SPAWNER);
+					ItemStack spawner = api.getSpawner(ent);
 					ItemMeta meta = spawner.getItemMeta();
 					meta.setDisplayName(ChatColor.GOLD + "[Spawner] Level 3");
 					spawner.setItemMeta(meta);
@@ -101,7 +116,7 @@ public class OnSpawnerPlaceAndBreak implements Listener {
 				} else if (block.hasMetadata("Level Four")) {
 					event.setCancelled(true);
 					block.setType(Material.AIR);
-					ItemStack spawner = new ItemStack(Material.MOB_SPAWNER);
+					ItemStack spawner = api.getSpawner(ent);
 					ItemMeta meta = spawner.getItemMeta();
 					meta.setDisplayName(ChatColor.GOLD + "[Spawner] Level 4");
 					spawner.setItemMeta(meta);
@@ -110,7 +125,7 @@ public class OnSpawnerPlaceAndBreak implements Listener {
 				} else if (block.hasMetadata("Level Five")) {
 					event.setCancelled(true);
 					block.setType(Material.AIR);
-					ItemStack spawner = new ItemStack(Material.MOB_SPAWNER);
+					ItemStack spawner = api.getSpawner(ent);
 					ItemMeta meta = spawner.getItemMeta();
 					meta.setDisplayName(ChatColor.GOLD + "[Spawner] Max Level");
 					spawner.setItemMeta(meta);

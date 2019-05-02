@@ -26,6 +26,7 @@ public class SpawnerSpawnListener implements Listener {
 		
 		
 		event.setCancelled(true);
+		event.getEntity().remove();
 		
 		if (spawner.hasMetadata("Level One")) {
 			
@@ -36,8 +37,7 @@ public class SpawnerSpawnListener implements Listener {
 		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    
-		    
+  
 		}
 		
 		if (spawner.hasMetadata("Level Two")) {
@@ -50,8 +50,7 @@ public class SpawnerSpawnListener implements Listener {
 			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			
-			
+
 		}
 		
         if (spawner.hasMetadata("Level Three")) {
@@ -96,11 +95,7 @@ public class SpawnerSpawnListener implements Listener {
 		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		}
-		
-		
-		
-		
-		
+
 	}
 	
 	private int getRandomNumberInRange(Random r, int min, int max) {
