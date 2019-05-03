@@ -1,11 +1,8 @@
 package me.champ.spawners.listeners;
 
-import java.util.HashSet;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -19,6 +16,8 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.util.BlockIterator;
 
 import me.champ.spawners.Main;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 
 public class ClickListeners implements Listener  {
 	
@@ -76,57 +75,118 @@ public class ClickListeners implements Listener  {
         
         
         if (event.getRawSlot() == 4 && guiName == plugin.upgradeMenu.lvl1Name) {
-            player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
-            player.closeInventory();
+        	
+        	Economy economy = plugin.getEcononomy();
+        	if (economy.getBalance(player) < 250000) {
+        		player.sendMessage(ChatColor.RED + "[Spawners] You do not have enough money!");
+        		player.closeInventory();
+        		return;
+        	} else {
+        		
+        		double current = economy.getBalance(player);
+        		double newBal = current - 250000;
+        		double cost = 250000;
+        		
+        		economy.withdrawPlayer(player, cost);
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] New Balance: " + newBal);
+                player.closeInventory();
+                
+                
+                Block spawnerToChange = getTargetBlock(player, 10);
+                if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
+                	spawnerToChange.removeMetadata("Level One", plugin);
+                    spawnerToChange.setMetadata("Level Two", new FixedMetadataValue(plugin, "lvl2"));
+                }
+        	}
+        	
             
-            
-            Block spawnerToChange = getTargetBlock(player, 10);
-            if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
-            	spawnerToChange.removeMetadata("Level One", plugin);
-                spawnerToChange.setMetadata("Level Two", new FixedMetadataValue(plugin, "lvl2"));
-            }
             
             
         } else if (event.getRawSlot() == 4 && guiName == plugin.upgradeMenu.lvl2Name) {
         	
-        	player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
-            player.closeInventory();
+        	
+        	Economy economy = plugin.getEcononomy();
+        	if (economy.getBalance(player) < 250000) {
+        		player.sendMessage(ChatColor.RED + "[Spawners] You do not have enough money!");
+        		player.closeInventory();
+        		return;
+        	} else {
+        		
+        		double current = economy.getBalance(player);
+        		double newBal = current - 250000;
+        		double cost = 250000;
+        		
+        		economy.withdrawPlayer(player, cost);
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] New Balance: " + newBal);
+                player.closeInventory();
 
-            Block spawnerToChange = getTargetBlock(player, 10);
-            if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
-            	spawnerToChange.removeMetadata("Level Two", plugin);
-                spawnerToChange.setMetadata("Level Three", new FixedMetadataValue(plugin, "lvl3"));
-            }
-            
-            
-            
+                Block spawnerToChange = getTargetBlock(player, 10);
+                if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
+                	spawnerToChange.removeMetadata("Level Two", plugin);
+                    spawnerToChange.setMetadata("Level Three", new FixedMetadataValue(plugin, "lvl3"));
+                }
+        	}
+ 
         } else if (event.getRawSlot() == 4 && guiName == plugin.upgradeMenu.lvl3Name) {
         	
-        	player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
-            player.closeInventory();
-            
-            java.util.List<Entity> nearby = player.getNearbyEntities(4, 4, 4);
-            
-            Block spawnerToChange = getTargetBlock(player, 10);
-            if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
-            	 spawnerToChange.removeMetadata("Level Three", plugin);
-                 spawnerToChange.setMetadata("Level Four", new FixedMetadataValue(plugin, "lvl4"));
-            }
+        	Economy economy = plugin.getEcononomy();
+        	if (economy.getBalance(player) < 250000) {
+        		player.sendMessage(ChatColor.RED + "[Spawners] You do not have enough money!");
+        		player.closeInventory();
+        		return;
+        	} else {
+        		
+        		double current = economy.getBalance(player);
+        		double newBal = current - 250000;
+        		double cost = 250000;
+        		
+        		economy.withdrawPlayer(player, cost);
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] New Balance: " + newBal);
+                player.closeInventory();
+                
+                Block spawnerToChange = getTargetBlock(player, 10);
+                if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
+                	 spawnerToChange.removeMetadata("Level Three", plugin);
+                     spawnerToChange.setMetadata("Level Four", new FixedMetadataValue(plugin, "lvl4"));
+                }
+        	}
+        	
+        	
+        	
 
         }else if (event.getRawSlot() == 4 && guiName == plugin.upgradeMenu.lvl4Name) {
         	
-        	player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
-            player.closeInventory();
-            
-            Block spawnerToChange = getTargetBlock(player, 10);
-            if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
-            	spawnerToChange.removeMetadata("Level Four", plugin);
-                spawnerToChange.setMetadata("Level Five", new FixedMetadataValue(plugin, "lvl5"));
-            }
+        	Economy economy = plugin.getEcononomy();
+        	if (economy.getBalance(player) < 250000) {
+        		player.sendMessage(ChatColor.RED + "[Spawners] You do not have enough money!");
+        		player.closeInventory();
+        		return;
+        	} else {
+        		
+        		double current = economy.getBalance(player);
+        		double newBal = current - 250000;
+        		double cost = 250000;
+        		
+        		economy.withdrawPlayer(player, cost);
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] Upgrade successful.");
+        		player.sendMessage(ChatColor.GREEN + "[Spawners] New Balance: " + newBal);
+                player.closeInventory();
+               
+                Block spawnerToChange = getTargetBlock(player, 10);
+                if (spawnerToChange.getType() == Material.MOB_SPAWNER) {
+                	spawnerToChange.removeMetadata("Level Four", plugin);
+                    spawnerToChange.setMetadata("Level Five", new FixedMetadataValue(plugin, "lvl5"));
+                }
+        	}
+        	
+        	
             
             
         } else if (event.getRawSlot() == 4 && guiName == plugin.upgradeMenu.lvl5Name) {
-        	
+
         	player.sendMessage(ChatColor.RED + "[Spawners] Nothing left to upgrade.");
         	player.closeInventory();
 	

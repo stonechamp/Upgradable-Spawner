@@ -3,3 +3,7 @@ main: me.champ.spawners.Main
 description: Upgrade Spawners
 version: 0.1
 author: Champ
+depend: [SilkSpawners, Vault]
+commands:
+   uspawner:
+      usage: /uspawner

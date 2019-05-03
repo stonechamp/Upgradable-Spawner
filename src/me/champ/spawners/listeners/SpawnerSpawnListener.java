@@ -25,8 +25,9 @@ public class SpawnerSpawnListener implements Listener {
 		
 		
 		
-		event.setCancelled(true);
-		event.getEntity().remove();
+		if (spawner.hasMetadata(null)) {
+			event.setCancelled(true);
+		}
 		
 		if (spawner.hasMetadata("Level One")) {
 			
@@ -34,9 +35,9 @@ public class SpawnerSpawnListener implements Listener {
 			Entity mob = event.getEntity();
 		    World world = (World) event.getSpawner().getWorld(); 
 		    
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
   
 		}
 		
@@ -46,10 +47,10 @@ public class SpawnerSpawnListener implements Listener {
 			Entity mob = event.getEntity();
 		    World world = (World) event.getSpawner().getWorld(); 
 		    
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 
 		}
 		
@@ -59,11 +60,11 @@ public class SpawnerSpawnListener implements Listener {
 			Entity mob = event.getEntity();
 		    World world = (World) event.getSpawner().getWorld(); 
 		    
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		    
 		}
 		
@@ -73,12 +74,12 @@ public class SpawnerSpawnListener implements Listener {
 			Entity mob = event.getEntity();
 		    World world = (World) event.getSpawner().getWorld(); 
 		    
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+			world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		}
 		
 		if (spawner.hasMetadata("Level Five")) {
@@ -87,13 +88,13 @@ public class SpawnerSpawnListener implements Listener {
 			Entity mob = event.getEntity();
 		    World world = (World) event.getSpawner().getWorld(); 
 		    
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
-		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
+		    world.spawn(event.getSpawner().getLocation().add(getRandomNumberInRange(random, 0, 5), getRandomNumberInRange(random, 0, 2), getRandomNumberInRange(random, 0, 5)), mob.getClass());
 		}
 
 	}

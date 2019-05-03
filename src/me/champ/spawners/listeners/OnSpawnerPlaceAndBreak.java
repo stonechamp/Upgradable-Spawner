@@ -40,14 +40,18 @@ public class OnSpawnerPlaceAndBreak implements Listener {
         
         if (e.getBlock().getType() == Material.MOB_SPAWNER) {
         	Block customSpawner = e.getBlock();
-        	World world = customSpawner.getWorld();
-        	Location loc = customSpawner.getLocation();
-        	BlockPosition blockPos = new BlockPosition(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
+        	BlockState state = customSpawner.getState();
+        	CreatureSpawner cspawner = (CreatureSpawner) state;
+        	cspawner.setDelay(10);
+        	//World world = customSpawner.getWorld();
+        	//Location loc = customSpawner.getLocation();
+        	//BlockPosition blockPos = new BlockPosition(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
         	String itemName = p.getItemInHand().getItemMeta().getDisplayName();
         	System.out.println(itemName);
         	
         	if (itemName == null) {
         		customSpawner.setMetadata("Level One", new FixedMetadataValue(plugin, "lvl1"));
+        		p.sendMessage("Worked.");
         	}
         	
         	if (itemName != null) {
