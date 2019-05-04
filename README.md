@@ -10,5 +10,5 @@ This plugin brings a new twist to mob spawners in minecraft.
 
 ## Features
 
-Spawners have 5 levels. Each level spawns an additional mob at the same time. This plugin hooks into Vault allowing for optimal economy integration. 
+Spawners have 5 levels. Each level spawns an additional mob per spawn. Spawners can be mined with Silk Touch and still maintain there level/mob. This plugin hooks into Vault allowing for optimal economy integration. 
 
